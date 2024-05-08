@@ -18,7 +18,7 @@ const artist = document.getElementById('track-artist');
 
 var currentTrack = 0;
 var sound = new Howl({
-    src: ["../sounds/" + playlist[currentTrack].file],
+    src: ["sounds/" + playlist[currentTrack].file],
     autoplay: true,
     loop: false,
     volume: 1,
@@ -29,7 +29,7 @@ var sound = new Howl({
 
 
 
-cover.src = "../images/" + playlist[currentTrack].image;
+cover.src = "images/" + playlist[currentTrack].image;
 title.textContent = playlist[currentTrack].title;
 artist.textContent = playlist[currentTrack].artist;
 
@@ -51,13 +51,13 @@ function setVolume(value) {
 function nextTrack() {
     currentTrack = (currentTrack + 1) % playlist.length;
 
-    cover.src = "../images/" + playlist[currentTrack].image;
+    cover.src = "images/" + playlist[currentTrack].image;
     title.textContent = playlist[currentTrack].title;
     artist.textContent = playlist[currentTrack].artist;
 
     sound.stop();
     sound = new Howl({
-        src: ["../sounds/" + playlist[currentTrack].file],
+        src: ["sounds/" + playlist[currentTrack].file],
         autoplay: true,
         loop: false,
         volume: sound.volume(),
